@@ -21,6 +21,7 @@
 ## 📑 Table of contents
 
 - [What is this? (10-year-old version + engineer version)](#-what-is-this-10-year-old-version--engineer-version)
+- [🌱 Beginner guide — read this and you are a professional](#-beginner-guide--read-this-and-you-are-a-professional)
 - [Who is this for? (user stories)](#-who-is-this-for-user-stories)
 - [Features — everything inside](#-features--everything-inside)
 - [Quickstart — first PASS in 60 seconds](#-quickstart--first-pass-in-60-seconds)
@@ -40,7 +41,7 @@
 
 ## 🧒 What is this? 10-year-old version + engineer version
 
-### The 10-year-old version (yes — even the donkey understands this 🫏)
+### The 10-year-old version (plain words, zero jargon)
 
 There are only **3 kinds of flowing** in the whole universe:
 
@@ -55,6 +56,28 @@ And now the magic trick 🤯: **all three follow the same shape of maths.** Lear
 ### The engineer version (one paragraph)
 
 General balance `dB/dt = Σφ_in − Σφ_out + P`; steady 1-D microbalance `dφ/dx = s` closed by Fourier `q = −k·dT/dx`, Fick `N = −D·dc/dx`, Newton `τ = −μ·dv/dx`. Dimensionless groups `Re = ρvD/μ`, `Pr = μ·cp/k`, `Sc = μ/(ρ·D_AB)`, `Nu = hD/k`, `Sh = k_m·D/D_AB`, `Gz = (D/L)·Re·Pr(Sc)`, `St = Nu/(Re·Pr)`, `j = St·Pr^{2/3}`, Fanning `f_F = Δp·D/(2·L·ρ·v²)`. Every experiment below states its validity window (e.g. Blasius only for 4000 < Re < 10⁵, Dittus–Boelter only for Re ≥ 10⁴, Hausen → 3.66 only for long pipes) and **fails loudly** outside it — that is how you learn to check assumptions.
+
+---
+
+## 🌱 Beginner guide — read this and you are a professional
+
+> Read this section and run the three commands in it — **you will know more than most interview candidates.**
+
+**The whole field in 6 lines.** Everything above is just detail around these:
+
+1. **Balance everything.** What goes in, minus what goes out, plus what is created, equals what piles up. Tanks, rooms, reactors, bank accounts — same sentence. *(Run `e1`, watch the level stop exactly where in = out.)*
+2. **Zoom in and the same sentence still holds.** Take a tiny slice, write the balance again, and you get temperature and concentration shapes: straight line in a wall, curve in a pipe wall, steeper curve in a ball. *(Run `e2`.)*
+3. **Flowing fluid drags.** Slow near the wall, fast in the middle. Gentle flows follow `16/Re`; fast flows follow Blasius. Pressure cost jumps from ∝ speed to ∝ speed^1.75. *(Run `e3`.)*
+4. **Entrances cheat.** A short pipe transfers far more heat than a long one. Never trust the textbook `3.66` until the pipe is long enough. *(Run `e4`.)*
+5. **One pattern rules all three.** Heat, dissolving and drag collapse to `j = f/2`. Say this sentence in an interview, then prove it with `e5` — hardly anyone else can do both.
+6. **Real cases are just steps 1–5 stacked.** A heat exchanger (`e6`), a dissolving tablet (`e7`), your home's heat bill (`e8`) — pick the right balance, the right shape, the right correlation, check the validity window.
+
+**Your 15-minute professional path:**
+```bash
+python3 experiments/e1_macro_balances.py   # balances click
+python3 experiments/e3_pipe_friction.py    # friction regimes click
+python3 experiments/e5_chilton_colburn.py  # the hidden pattern clicks — now you are dangerous
+```
 
 ---
 
