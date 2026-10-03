@@ -1,0 +1,7 @@
+cff-version: 1.2.0
+title: Transport Phenomena Benchmark 2026
+version: 1.0.0
+authors: [{family-names: TBD, given-names: Repo Owner}]
+license: MIT
+repository-code: https://example.invalid/transport-phenomena-benchmark-2026
+keywords: [transport-phenomena, chilton-colburn, graetz, reproducible-research]

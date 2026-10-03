@@ -1,0 +1,23 @@
+services:
+  tpbench:
+    build: .
+    container_name: tpbench-2026
+    volumes:
+      - ./benchmarks:/app/benchmarks
+      - ./data:/app/data
+    environment:
+      - PYTHONPATH=/app/src
+      - TZ=UTC
+    command: python3 scripts/run_all.py
+    mem_limit: 2g
+
+  verify-live:
+    build: .
+    container_name: tpbench-verify-live
+    volumes:
+      - ./benchmarks:/app/benchmarks
+      - ./data:/app/data
+    environment:
+      - PYTHONPATH=/app/src
+    command: python3 scripts/verify_live.py
+    profiles: ["live"]

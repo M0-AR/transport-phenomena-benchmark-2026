@@ -1,0 +1,5 @@
+case,flux_SI,check
+slab_q_Wm2,478.3999999999999,Fourier linear
+cyl_q_per_L_Wm,273.6066109909306,log profile
+sph_Q_W,45.08813776432071,1/r profile
+fick_N_kg_m2s,1.6455999999999998e-06,benzoic acid
